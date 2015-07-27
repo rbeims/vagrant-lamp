@@ -25,7 +25,7 @@ Vagrant.configure("2") do |config|
   # Forward MySql port on 33066, used for connecting admin-clients to localhost:33066
   config.vm.network :forwarded_port, guest: 3306, host: 33066
   # Forward http port on 8080, used for connecting web browsers to localhost:8080
-  config.vm.network :forwarded_port, guest: 80, host: 8080
+  config.vm.network :forwarded_port, guest: 80, host: 8081
   # Forward http port on 8025, used for connecting web browsers to MailHog
   config.vm.network :forwarded_port, guest: 8025, host: 8025
 
@@ -57,6 +57,6 @@ Vagrant.configure("2") do |config|
     chef.add_recipe "vagrant_main::nodejs"
     chef.add_recipe "vagrant_main::wordpress"
     chef.add_recipe "vagrant_main::magento"
-    chef.add_recipe "editora"
+#    chef.add_recipe "editora"
   end
 end
